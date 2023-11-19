@@ -1,0 +1,19 @@
+{
+  "name": "socials",
+  "description": "Social Network",
+  "author": "Link",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0"
+  },
+  "scripts": {
+    "setup": "npm install && cd server && npm install && cd ../client && npm install && npm init @eslint/config",
+    "dev-server": "cd server && nodemon ./config/www.mjs",
+    "dev-client": "concurrently \"cd client && npm run dev\" \"cd client && npm run sass\"",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\""
+  }
+}
